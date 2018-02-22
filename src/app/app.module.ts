@@ -3,32 +3,43 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { RecordsPage } from '../pages/records/records';
+import { MonitorPage } from '../pages/monitor/monitor';
+import { ControlsPage } from '../pages/controls/controls';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HomePage } from '../pages/home/home';
+
+import { environment } from '../environment/environment';
+import { AngularFireModule } from 'angularfire2';
+import { ChartsModule } from 'ng2-charts';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    RecordsPage,
+    MonitorPage,
+    ControlsPage,
     HomePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(environment.firebase, 'waterpurification'),
+    AngularFireDatabaseModule,
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
+    RecordsPage,
+    MonitorPage,
+    ControlsPage,
     TabsPage
   ],
   providers: [

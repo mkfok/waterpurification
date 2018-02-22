@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Records
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label>Tank Selection</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Sedimentation</ion-option>
+            <ion-option value="n64">Chemical Treatment</ion-option>
+            <ion-option value="ps">Biological Treatment</ion-option>
+            <ion-option value="genesis">Sludge</ion-option>
+            <ion-option value="saturn">Flitration</ion-option>
+            <ion-option value="snes">Collection</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="MM/DD" pickerFormat="MM/DD"></ion-datetime>
+        </ion-item>
+      </ion-list>
+
+    <canvas baseChart width="300" height="400"
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)"></canvas>
+</ion-content>

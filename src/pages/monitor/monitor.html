@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Monitor
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-list inset *ngIf="tanks$ | async as tanks">
+    <ion-list-header>TANKS</ion-list-header>
+    <ion-item *ngFor="let tank of tanks">
+      <ion-card class="card-bg">
+        <ion-card-header class="header-title">
+            {{tank.type.split('_').join(' ').toUpperCase()}} TANK
+        </ion-card-header>
+        <ion-card-content>
+          <div class="label">
+            <ion-icon name="ios-analytics"></ion-icon>
+            <span>Water Level: {{tank.current.level}}%</span>
+          </div>
+          <div class="label">
+              <ion-icon name="ios-thermometer-outline"></ion-icon>
+            <span>Temperature: {{tank.current.temperature}} ℃</span>
+          </div>
+          <div class="label">
+              <ion-icon name="ios-barcode"></ion-icon>
+            <span>pH Reading: {{tank.current.ph}}</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

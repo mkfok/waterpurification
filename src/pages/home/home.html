@@ -1,17 +1,52 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
-  <ion-navbar>
+
+  <ion-navbar color="primary">
     <ion-title>Home</ion-title>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-list>
+    <ion-list-header>
+      NOTIFICATIONS
+    </ion-list-header>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+            <ion-icon name="notifications"></ion-icon> Collection tank
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Collection tank is almost full!
+            </p>
+            <p>
+                Please use the water soon
+            </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+            <ion-icon name="notifications"></ion-icon> Filtration Column
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Filtration column is reaching its life limit.
+            </p>
+            <p>
+                Please contact us for replacement.
+            </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -1,0 +1,25 @@
+page-monitor {
+  .card-bg {
+    background: linear-gradient(to bottom,  #74d4cc 0%,#1386a6 100%);
+    border-radius: 4px;
+    
+    .header-title {
+      color: white;
+    }
+
+    .label {
+      display: flex;
+      flex-direction: row;
+      width: 128px;
+      justify-content: space-between;
+    }
+  }
+
+  ion-icon {
+    color: white;
+  }
+
+  span {
+    color: white;
+  }
+}
